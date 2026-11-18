@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+
+/* блоки: зовнішній відступ 3px, рамка 1px світло-сіра */
+.block {
+  margin: 3px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.header  { grid-area: h; background: #5b9bd5; }
+.cyan    { grid-area: c; background: #5fd3d3; }
+.red     { grid-area: r; background: #e06c6c; }
+.green   { grid-area: g; background: #30a577; }
+.yellow  { grid-area: y; background: #ffc000; }
+.sidebar { grid-area: s; background: #6f7e83; }
+.footer  { grid-area: f; background: #c55a11; }
+
+/* менше 500px: один стовпець */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "h" "c" "r" "g" "y" "s" "f";
+}
+.block { min-height: 90px; }
+
+/* від 500px: два стовпці */
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "h h" "c r" "g g" "y s" "f f";
+  }
+}
+
+/* від 750px: три стовпці */
+@media (min-width: 750px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "h h h" "c r g" "y y s" "f f f";
+  }
+}
+
+/* від 950px: макет як на зразку, на весь екран */
+@media (min-width: 950px) {
+  .wrapper {
+    height: 100vh;
+    grid-template-columns: 1.23fr 1.18fr 1.6fr 1fr;
+    grid-template-rows: 155fr 111fr 135fr 105fr;
+    grid-template-areas:
+      "h h h s"
+      "c r y s"
+      "g g y s"
+      "f f f f";
+  }
+  .block { min-height: 0; }
+}
+
+/* від 1200px: той самий макет, більший шрифт */
+@media (min-width: 1200px) {
+  .block { font-size: 22px; }
+}
