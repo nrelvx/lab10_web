@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git команди</title>
+  <link rel="stylesheet" href="blog.css">
+  <style>
+    .cheat {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) { .cheat { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .cheat { grid-template-columns: 1fr; } }
+
+    .cheat h2 { margin: 0 0 12px; font-size: 20px; }
+    .cheat h2:not(:first-child) { margin-top: 26px; }
+    .cheat p { margin: 0 0 14px; font-size: 12px; line-height: 1.4; color: #4a4560; }
+    .cheat code {
+      display: block;
+      margin-top: 4px;
+      font-family: "Courier New", monospace;
+      font-weight: bold;
+      color: #1d1a2b;
+    }
+    .cheat a { color: #5e35b1; }
+
+    .c-create  { color: #7e57c2; }
+    .c-observe { color: #3949ab; }
+    .c-branch  { color: #00897b; }
+    .c-change  { color: #2e7d32; }
+    .c-sync    { color: #d81b60; }
+    .c-finally { color: #d81b60; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Мій особистий блог <span class="author">Соколова Вероніка</span></h1>
+    <nav>
+      <a href="index.html">Вхід</a>
+      <a href="register.html">Реєстрація</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="cheat">
+      <div class="col1">
+        <h2 class="c-create">Create a Repository</h2>
+        <p>From scratch -- Create a new local repository<code>$ git init [project name]</code></p>
+        <p>Download from an existing repository<code>$ git clone my_url</code></p>
+        <h2 class="c-observe">Observe your Repository</h2>
+        <p>List new or modified files not yet committed<code>$ git status</code></p>
+        <p>Show the changes to files not yet staged<code>$ git diff</code></p>
+        <p>Show the changes to staged files<code>$ git diff --cached</code></p>
+        <p>Show all staged and unstaged file changes<code>$ git diff HEAD</code></p>
+        <p>Show the changes between two commit ids<code>$ git diff commit1 commit2</code></p>
+        <p>List the change dates and authors for a file<code>$ git blame [file]</code></p>
+        <p>Show the file changes for a commit id and/or file<code>$ git show [commit]:[file]</code></p>
+        <p>Show full change history<code>$ git log</code></p>
+        <p>Show change history for file/directory including diffs<code>$ git log -p [file/directory]</code></p>
+      </div>
+      <div class="col2">
+        <h2 class="c-branch">Working with Branches</h2>
+        <p>List all local branches<code>$ git branch</code></p>
+        <p>List all branches, local and remote<code>$ git branch -av</code></p>
+        <p>Switch to a branch, my_branch, and update working directory<code>$ git checkout my_branch</code></p>
+        <p>Create a new branch called new_branch<code>$ git branch new_branch</code></p>
+        <p>Delete the branch called my_branch<code>$ git branch -d my_branch</code></p>
+        <p>Merge branch_a into branch_b<code>$ git checkout branch_b<br>$ git merge branch_a</code></p>
+        <p>Tag the current commit<code>$ git tag my_tag</code></p>
+      </div>
+      <div class="col3">
+        <h2 class="c-change">Make a change</h2>
+        <p>Stages the file, ready for commit<code>$ git add [file]</code></p>
+        <p>Stage all changed files, ready for commit<code>$ git add .</code></p>
+        <p>Commit all staged files to versioned history<code>$ git commit -m "commit message"</code></p>
+        <p>Commit all your tracked files to versioned history<code>$ git commit -am "commit message"</code></p>
+        <p>Unstages file, keeping the file changes<code>$ git reset [file]</code></p>
+        <p>Revert everything to the last commit<code>$ git reset --hard</code></p>
+      </div>
+      <div class="col4">
+        <h2 class="c-sync">Synchronize</h2>
+        <p>Get the latest changes from origin (no merge)<code>$ git fetch</code></p>
+        <p>Fetch the latest changes from origin and merge<code>$ git pull</code></p>
+        <p>Fetch the latest changes from origin and rebase<code>$ git pull --rebase</code></p>
+        <p>Push local changes to the origin<code>$ git push</code></p>
+        <h2 class="c-finally">Finally!</h2>
+        <p>When in doubt, use git help<code>$ git command --help</code></p>
+        <p>Or visit <a href="https://training.github.com/">https://training.github.com/</a> for official GitHub training.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© Всі права захищені.</p>
+    <p>Розробник: студентка групи 304-ТН Соколова В.</p>
+  </footer>
+</body>
+</html>

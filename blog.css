@@ -1,0 +1,119 @@
+/* Загальні стилі сайту */
+:root {
+  --header-bg: #7e57c2;
+  --header-line: #f48fb1;
+  --footer-bg: #2b2640;
+  --form-title-bg: #7e57c2;
+  --border: #d9d3e8;
+  --text: #2b2640;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: #faf8ff;
+}
+
+/* ---------- шапка ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--header-bg);
+  border-bottom: 3px solid var(--header-line);
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+.site-header .author {
+  display: block;
+  margin-left: 22px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f3e5f5;
+}
+.site-header nav a {
+  margin-left: 14px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+.site-header nav a:hover { text-decoration: underline; }
+
+/* ---------- основний вміст ---------- */
+main {
+  flex: 1;
+  padding: 30px 20px;
+}
+
+/* ---------- футер ---------- */
+.site-footer {
+  padding: 28px 10px;
+  background: var(--footer-bg);
+  color: #e0dcf0;
+  text-align: center;
+  font-size: 12px;
+}
+.site-footer p { margin: 4px 0; }
+
+/* ---------- форма реєстрації ---------- */
+.form-box {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.form-box h2 {
+  margin: 0;
+  padding: 10px;
+  background: var(--form-title-bg);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.form-box form { padding: 8px 14px 16px; }
+
+.form-box label {
+  display: block;
+  margin: 12px 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+}
+.form-box input:focus,
+.form-box select:focus {
+  outline: 2px solid #b39ddb;
+  border-color: #7e57c2;
+}
+.form-box button {
+  display: block;
+  margin: 16px 0 0 auto;
+  padding: 7px 14px;
+  border: 1px solid #5e35b1;
+  border-radius: 4px;
+  background: #ede7f6;
+  color: #311b92;
+  font-size: 13px;
+  cursor: pointer;
+}
+.form-box button:hover { background: #d1c4e9; }
